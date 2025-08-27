@@ -1,0 +1,46 @@
+server:
+  port: 8080
+
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/crediya
+    username: postgres
+    password: pragma
+
+  sql:
+    init:
+      mode: always  # Para ejecutar schema.sql y data.sql en src/main/resources
+
+logging:
+  level:
+    org:
+      springframework:
+        r2dbc: DEBUG        # Logs de Spring Data R2DBC
+    io:
+      r2dbc:
+        postgresql: DEBUG   # Logs específicos del driver R2DBC PostgreSQL
+    reactor:
+      netty: INFO          # Logs para reactor netty (WebFlux)
+
+cors:
+  allowed-origins: "http://localhost:4200,http://localhost:8080"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,prometheus"
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+adapters:
+  r2dbc:
+    host: localhost
+    port: 5432
+    database: crediya
+    schema: public
+    username: postgres
+    password: pragma
+
