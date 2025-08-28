@@ -7,7 +7,6 @@ import co.com.microautenticacion.r2dbc.user.dao.UserR2dbcRepository;
 import co.com.microautenticacion.r2dbc.user.dto.UserDto;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.reactive.TransactionalOperator;
 import reactor.core.publisher.Mono;
 
