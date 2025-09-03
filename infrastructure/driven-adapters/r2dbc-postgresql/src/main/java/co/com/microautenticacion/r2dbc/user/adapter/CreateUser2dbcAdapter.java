@@ -35,4 +35,10 @@ public class CreateUser2dbcAdapter implements UserRepository {
     log.info(Constants.VERIFY_EMAIL, email);
     return userR2dbcRepository.existsUserDtoByEmail(email);
   }
+
+  @Override
+  public Mono<Boolean> verifyUser(String email, String identification) {
+    log.info(Constants.VERIFY_USER, identification, email);
+    return userR2dbcRepository.existsUserDtoByEmailAndIdentification(email, identification);
+  }
 }

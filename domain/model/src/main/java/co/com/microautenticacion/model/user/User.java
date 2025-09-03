@@ -3,11 +3,8 @@ package co.com.microautenticacion.model.user;
 import lombok.Builder;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-//import lombok.NoArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.lang.annotation.Repeatable;
 import java.math.BigDecimal;
 import java.util.Date;
 

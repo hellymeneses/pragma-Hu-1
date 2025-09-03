@@ -8,4 +8,6 @@ public interface UserRepository {
   Mono<User> createUser(User user);
 
   Mono<Boolean> verifyEmail (String email);
+
+  Mono<Boolean>verifyUser(String email , String identification);
 }

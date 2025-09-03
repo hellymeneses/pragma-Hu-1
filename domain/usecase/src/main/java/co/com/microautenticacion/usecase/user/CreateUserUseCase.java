@@ -4,7 +4,6 @@ import co.com.microautenticacion.model.common.constantes.MessageConstants;
 import co.com.microautenticacion.model.common.exception.EmailAlreadyExistsException;
 import co.com.microautenticacion.model.user.User;
 import co.com.microautenticacion.model.user.gateways.UserRepository;
-import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
 
 public class CreateUserUseCase {
@@ -21,7 +20,6 @@ public class CreateUserUseCase {
   }
 
   protected Mono<User> validateEmail(User user) {
-
     return userRepository.verifyEmail(user.getEmail())
             .flatMap(emailExists -> {
               if (emailExists) {

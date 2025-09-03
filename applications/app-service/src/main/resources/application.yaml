@@ -7,9 +7,6 @@ spring:
     username: postgres
     password: pragma
 
-  sql:
-    init:
-      mode: always  # Para ejecutar schema.sql y data.sql en src/main/resources
 
 logging:
   level:
